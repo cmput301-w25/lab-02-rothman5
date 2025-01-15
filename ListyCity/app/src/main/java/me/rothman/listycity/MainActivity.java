@@ -1,7 +1,6 @@
 package me.rothman.listycity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import android.os.Bundle;
 import android.view.View;
@@ -89,20 +88,19 @@ public class MainActivity extends AppCompatActivity {
             // Notifier the adapter to update the ListView
             cityAdapter.notifyDataSetChanged();
 
-            // Clear and hide the city entry field and confirm button
-            cityField.setText("");
-            cityField.setVisibility(View.GONE);
-            confirmButton.setVisibility(View.GONE);
+            hideCityFieldAndConfirmButton();
         }
     }
 
     private void onCitySelected(AdapterView<?> adapterView, View view, int index, long id) {
         // Mark the selected city for further processing
         selectedCity = cityTextList.get(index);
-        Toast.makeText(this, "Selected: " + selectedCity, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Selected: " + selectedCity, Toast.LENGTH_LONG).show();
     }
 
     private void onDeleteButtonClicked(View view) {
+        hideCityFieldAndConfirmButton();
+
         if (selectedCity == null) {
             Toast.makeText(this, "Select a city first!", Toast.LENGTH_SHORT).show();
         } else {
@@ -115,5 +113,13 @@ public class MainActivity extends AppCompatActivity {
             // Clear the selected city selection
             selectedCity = null;
         }
+    }
+
+    private void hideCityFieldAndConfirmButton() {
+        // Clear and hide the city entry field and confirm button
+        cityField.setText("");
+        cityField.setVisibility(View.GONE);
+        confirmButton.setVisibility(View.GONE);
+
     }
 }
