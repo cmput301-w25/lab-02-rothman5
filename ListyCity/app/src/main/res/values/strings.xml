@@ -5,4 +5,5 @@
     <string name="sample_text">sample_text</string>
     <string name="confirm">CONFIRM</string>
     <string name="enter_a_city">Enter a city</string>
+    <string name="selected">SELECTED</string>
 </resources>
