@@ -1,0 +1,49 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run gradle",
+			"type": "shell",
+			"command": "./gradlew",
+			"args": [
+				"assembleDebug",
+				"assembleDebugUnitTest",
+				"assembleDebugAndroidTest",
+			],
+			"windows": {
+                "command": "./gradlew.bat",
+                "args": [
+					"assembleDebug",
+					"assembleDebugUnitTest",
+					"assembleDebugAndroidTest",
+				],
+            },
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			}
+		},
+		{
+			"label": "debug app",
+			"type": "shell",
+			"command": "adb",
+			"args": [
+				"shell",
+				"am",
+				"start",
+				"-D",
+				"-n",
+				"me.rothman.ListyCity/.MainActivity"
+			]
+		}
+	]
+}
