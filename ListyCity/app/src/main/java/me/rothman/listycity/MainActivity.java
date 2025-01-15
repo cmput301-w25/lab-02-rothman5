@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (selectedView != null) {
             // Deselect
-            selectedView.setBackgroundColor(getColor(R.color.off_white));
+            selectedView.setBackgroundColor(getColor(R.color.primaryColor));
             selectedCity.setSelected(false);
             TextView citySelectedView = selectedView.findViewById(R.id.city_selected);
             citySelectedView.setText("");
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         if (selectedCity.isSelected()) {
             // Deselect
             selectedView = null;
-            view.setBackgroundColor(getColor(R.color.off_white));
+            view.setBackgroundColor(getColor(R.color.primaryColor));
             selectedText = "";
             selectedCity.setSelected(false);
         } else {
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (selectedView != null) {
                 // Deselect previous item
-                selectedView.setBackgroundColor(getColor(R.color.off_white));
+                selectedView.setBackgroundColor(getColor(R.color.primaryColor));
                 prevSelectedCity.setSelected(false);
                 TextView prevCitySelectedView = selectedView.findViewById(R.id.city_selected);
                 prevCitySelectedView.setText("");
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Select
             selectedView = view;
-            view.setBackgroundColor(getColor(R.color.selected_color));
+            view.setBackgroundColor(getColor(R.color.secondaryColor));
             selectedText = getString(R.string.selected);
             selectedCity.setSelected(true);
         }
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             cityAdapter.notifyDataSetChanged();
 
             // Deselect
-            selectedView.setBackgroundColor(getColor(R.color.off_white));
+            selectedView.setBackgroundColor(getColor(R.color.primaryColor));
             selectedCity.setSelected(false);
             TextView citySelectedView = selectedView.findViewById(R.id.city_selected);
             citySelectedView.setText("");
