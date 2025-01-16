@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private City selectedCity;
     private View selectedView;
     private ArrayList<City> cityList;
-    private ArrayAdapter<City> cityAdapter;
+    private CityAdapter cityAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
